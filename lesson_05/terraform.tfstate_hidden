@@ -1,0 +1,252 @@
+{
+  "version": 4,
+  "terraform_version": "1.0.7",
+  "serial": 10,
+  "lineage": "83f56432-8662-c0c4-0081-a4f81f94b39a",
+  "outputs": {
+    "application_profile_id": {
+      "value": "uni/tn-stienvan/ap-my_website",
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "aci_application_epg",
+      "name": "db",
+      "provider": "provider[\"registry.terraform.io/ciscodevnet/aci\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "annotation": "orchestrator:terraform",
+            "application_profile_dn": "uni/tn-stienvan/ap-my_website",
+            "description": "this is the database epg created by terraform",
+            "exception_tag": "",
+            "flood_on_encap": "disabled",
+            "fwd_ctrl": "",
+            "has_mcast_source": "no",
+            "id": "uni/tn-stienvan/ap-my_website/epg-db",
+            "is_attr_based_epg": "no",
+            "match_t": "AtleastOne",
+            "name": "db",
+            "name_alias": "db",
+            "pc_enf_pref": "unenforced",
+            "pref_gr_memb": "exclude",
+            "prio": "unspecified",
+            "relation_fv_rs_aepg_mon_pol": "",
+            "relation_fv_rs_bd": null,
+            "relation_fv_rs_cons": null,
+            "relation_fv_rs_cons_if": null,
+            "relation_fv_rs_cust_qos_pol": null,
+            "relation_fv_rs_dpp_pol": "",
+            "relation_fv_rs_fc_path_att": null,
+            "relation_fv_rs_graph_def": null,
+            "relation_fv_rs_intra_epg": null,
+            "relation_fv_rs_node_att": null,
+            "relation_fv_rs_prot_by": null,
+            "relation_fv_rs_prov": null,
+            "relation_fv_rs_prov_def": null,
+            "relation_fv_rs_sec_inherited": null,
+            "relation_fv_rs_trust_ctrl": "",
+            "shutdown": "no"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ==",
+          "dependencies": [
+            "aci_application_profile.myWebsite"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aci_application_epg",
+      "name": "web",
+      "provider": "provider[\"registry.terraform.io/ciscodevnet/aci\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "annotation": "orchestrator:terraform",
+            "application_profile_dn": "uni/tn-stienvan/ap-my_website",
+            "description": "this is the web epg created by terraform",
+            "exception_tag": "",
+            "flood_on_encap": "disabled",
+            "fwd_ctrl": "",
+            "has_mcast_source": "no",
+            "id": "uni/tn-stienvan/ap-my_website/epg-web",
+            "is_attr_based_epg": "no",
+            "match_t": "AtleastOne",
+            "name": "web",
+            "name_alias": "web",
+            "pc_enf_pref": "unenforced",
+            "pref_gr_memb": "exclude",
+            "prio": "unspecified",
+            "relation_fv_rs_aepg_mon_pol": "",
+            "relation_fv_rs_bd": null,
+            "relation_fv_rs_cons": null,
+            "relation_fv_rs_cons_if": null,
+            "relation_fv_rs_cust_qos_pol": null,
+            "relation_fv_rs_dpp_pol": "",
+            "relation_fv_rs_fc_path_att": null,
+            "relation_fv_rs_graph_def": null,
+            "relation_fv_rs_intra_epg": null,
+            "relation_fv_rs_node_att": null,
+            "relation_fv_rs_prot_by": null,
+            "relation_fv_rs_prov": null,
+            "relation_fv_rs_prov_def": null,
+            "relation_fv_rs_sec_inherited": null,
+            "relation_fv_rs_trust_ctrl": "",
+            "shutdown": "no"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ==",
+          "dependencies": [
+            "aci_application_profile.myWebsite"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aci_application_profile",
+      "name": "myWebsite",
+      "provider": "provider[\"registry.terraform.io/ciscodevnet/aci\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "annotation": "orchestrator:terraform",
+            "description": "",
+            "id": "uni/tn-stienvan/ap-my_website",
+            "name": "my_website",
+            "name_alias": "",
+            "prio": "unspecified",
+            "relation_fv_rs_ap_mon_pol": "",
+            "tenant_dn": "uni/tn-stienvan"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ==",
+          "dependencies": [
+            "aci_tenant.aci_tenant"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aci_bridge_domain",
+      "name": "bd_for_subnet",
+      "provider": "provider[\"registry.terraform.io/ciscodevnet/aci\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "annotation": "orchestrator:terraform",
+            "arp_flood": "no",
+            "bridge_domain_type": "regular",
+            "description": "This bridge domain is created by the Terraform ACI provider",
+            "ep_clear": "no",
+            "ep_move_detect_mode": "",
+            "host_based_routing": "no",
+            "id": "uni/tn-stienvan/BD-bd_for_subnet",
+            "intersite_bum_traffic_allow": "no",
+            "intersite_l2_stretch": "no",
+            "ip_learning": "yes",
+            "ipv6_mcast_allow": "no",
+            "limit_ip_learn_to_subnets": "yes",
+            "ll_addr": "::",
+            "mac": "00:22:BD:F8:19:FF",
+            "mcast_allow": "no",
+            "multi_dst_pkt_act": "bd-flood",
+            "name": "bd_for_subnet",
+            "name_alias": "",
+            "optimize_wan_bandwidth": "no",
+            "relation_fv_rs_abd_pol_mon_pol": "",
+            "relation_fv_rs_bd_flood_to": [],
+            "relation_fv_rs_bd_to_ep_ret": null,
+            "relation_fv_rs_bd_to_fhs": "",
+            "relation_fv_rs_bd_to_nd_p": null,
+            "relation_fv_rs_bd_to_netflow_monitor_pol": [],
+            "relation_fv_rs_bd_to_out": [],
+            "relation_fv_rs_bd_to_profile": "",
+            "relation_fv_rs_bd_to_relay_p": "",
+            "relation_fv_rs_ctx": null,
+            "relation_fv_rs_igmpsn": null,
+            "relation_fv_rs_mldsn": null,
+            "tenant_dn": "uni/tn-stienvan",
+            "unicast_route": "yes",
+            "unk_mac_ucast_act": "proxy",
+            "unk_mcast_act": "flood",
+            "v6unk_mcast_act": "flood",
+            "vmac": "not-applicable"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ==",
+          "dependencies": [
+            "aci_tenant.aci_tenant"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aci_subnet",
+      "name": "demosubnet",
+      "provider": "provider[\"registry.terraform.io/ciscodevnet/aci\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "annotation": "orchestrator:terraform",
+            "ctrl": [
+              "nd"
+            ],
+            "description": "This subject is created by Terraform",
+            "id": "uni/tn-stienvan/BD-bd_for_subnet/subnet-[172.16.1.1/24]",
+            "ip": "172.16.1.1/24",
+            "name_alias": "",
+            "parent_dn": "uni/tn-stienvan/BD-bd_for_subnet",
+            "preferred": "no",
+            "relation_fv_rs_bd_subnet_to_out": [],
+            "relation_fv_rs_bd_subnet_to_profile": "",
+            "relation_fv_rs_nd_pfx_pol": "",
+            "scope": [
+              "private"
+            ],
+            "virtual": "no"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ==",
+          "dependencies": [
+            "aci_bridge_domain.bd_for_subnet",
+            "aci_tenant.aci_tenant"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aci_tenant",
+      "name": "aci_tenant",
+      "provider": "provider[\"registry.terraform.io/ciscodevnet/aci\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "annotation": "orchestrator:terraform",
+            "description": "",
+            "id": "uni/tn-stienvan",
+            "name": "stienvan",
+            "name_alias": "",
+            "relation_fv_rs_tenant_mon_pol": null,
+            "relation_fv_rs_tn_deny_rule": []
+          },
+          "sensitive_attributes": [],
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ=="
+        }
+      ]
+    }
+  ]
+}
